@@ -10,19 +10,88 @@
 </head>
 
 <body>
-    <div class="container-fluid row">
+    <div class="container-fluid">
         <div class="jumbotron text-center">
             <h1>Sapataria</h1>
             <p>Aqui tera alguma mensagem para o usuário</p>
         </div>
 
         <div class="col-lg-8">
-            teste
+
+            <!--Well de cadastro de pedido-->
+            <div class="panel panel-default">
+                <div class="well well-sm" id="linkCadastrar" data-toggle="collapse" data-target="#divCadastrar"><a
+                        href="#" data-toggle="modal" data-target="#CadastarModal">Cadastrar Pedidos</a></div>
+                <div id="divCadastrar" class="container-fluid collapse">
+                    <form>
+                        <div class="form-group">
+                            <label for="titulo">Titulo</label>
+                            <input type="text" class="form-control" id="titulo" />
+                        </div>
+                        <div class="form-group">
+                            <label for="cliente">Cliente</label>
+                            <input type="text" class="form-control" id="cliente" />
+                        </div>
+                        <div class="form-group">
+                            <label for="data">Data Retirada</label>
+                            <input type="date" class="form-control" id="data" />
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição</label>
+                            <textarea class="form-control" rows="7" id="descricao"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Cadatrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!--Well de consulta de todos os pedidos-->
+            <div class="panel panel-default">
+                <div class="well well-sm" id="linkConsultar" data-toggle="collapse" data-target="#divConsulta"><a
+                        href="#" data-toggle="modal" data-target="#ConsultaModal">Consultar`Pedidos</a></div>
+                <div id="divConsulta" class="container-fluid collapse">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Cliente</td>
+                                <td>Data solicitação</td>
+                                <td>Data para entrega</td>
+                                <td>Detalhe</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Viniciu </td>
+                                <td>11/11/2019</td>
+                                <td>20/11/2019</td>
+                                <td><a href="#">Detalhes</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
         </div>
+
+        <!--Painel onde os pedidos mais proximos estaçao sendo apresentados-->
         <div class="col-lg-4">
-            teste soihdfoasihfa
+            <div class="panel panel-default">
+                <div class="panel-heading">Pedidos que devem ser entregues hoje</div>
+                <div class="panel-body">
+                    Titulo: Troca do sola do sapato - D.Entrega : 20/11/2019
+                </div>
+                <div class="panel-body">
+                    Titulo: Troca do sola do sapato - D.Entrega : 20/11/2019
+                </div>
+                <div class="panel-body">
+                    Titulo: Troca do sola do sapato - D.Entrega : 20/11/2019
+                </div>
+            </div>
         </div>
     </div>
+
+
 
 </body>
 
