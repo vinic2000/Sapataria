@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <title>Uma Página HTML5 Básica</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -22,7 +24,7 @@
             <div class="panel panel-default">
                 <div class="well well-sm" id="linkCadastrar" data-toggle="collapse" data-target="#divCadastrar"><a
                         href="#" data-toggle="modal" data-target="#CadastarModal">Cadastrar Pedidos</a></div>
-                <div id="divCadastrar" class="container-fluid collapse">
+                <div id="divCadastrar" class="container-fluid collapse divCaixa">
                     <form>
                         <div class="form-group">
                             <label for="titulo">Titulo</label>
@@ -49,7 +51,7 @@
             <div class="panel panel-default">
                 <div class="well well-sm" id="linkConsultar" data-toggle="collapse" data-target="#divConsulta"><a
                         href="#" data-toggle="modal" data-target="#ConsultaModal">Consultar`Pedidos</a></div>
-                <div id="divConsulta" class="container-fluid collapse">
+                <div id="divConsulta" class="container-fluid collapse divCaixa">
                     <table class="table">
                         <thead>
                             <tr>
@@ -78,14 +80,20 @@
         <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading">Pedidos que devem ser entregues hoje</div>
-                <div class="panel-body">
-                    Titulo: Troca do sola do sapato - D.Entrega : 20/11/2019
+                <div class="panel-body msg_panel alert alert-danger">
+                    Titulo: Troca do sola do sapato
+                    <br>
+                    D.Entrega : 20/11/2019
                 </div>
-                <div class="panel-body">
-                    Titulo: Troca do sola do sapato - D.Entrega : 20/11/2019
+                <div class="panel-body msg_panel alert alert-warning">
+                    Titulo: Troca do sola do sapato
+                    <br>
+                    D.Entrega : 20/11/2019
                 </div>
-                <div class="panel-body">
-                    Titulo: Troca do sola do sapato - D.Entrega : 20/11/2019
+                <div class="panel-body msg_panel alert alert-warning">
+                    Titulo: Troca do sola do sapato
+                    <br>
+                    D.Entrega : 20/11/2019
                 </div>
             </div>
         </div>
