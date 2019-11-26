@@ -14,9 +14,10 @@ namespace Sapataria_Web.Controlador
 
         public Cliente localizar(Cliente cliente)
         {
-            return dbSet.Where(c => c.Nome == cliente.Nome).SingleOrDefault();
-
+            if(dbSet.Where(c => c.Nome.ToUpper() == cliente.Nome.ToUpper()).SingleOrDefault())
+            return ;
         }
+
         public void Cadastrar(Cliente cliente)
         {
             dbSet.Add(cliente);

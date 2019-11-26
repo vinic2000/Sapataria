@@ -15,8 +15,9 @@
             <div class="well well-sm" id="linkCadastrar" data-toggle="collapse" data-target="#divCadastrar">
                 <a href="#" data-toggle="modal" data-target="#CadastarModal">Cadastrar Pedidos</a>
             </div>
+
             <div id="divCadastrar" class="container-fluid collapse divCaixa">
-                <form asp-action="Cadastrar" method="post">
+                <form asp-controller="Pedido" asp-action="Cadastrar" method="post">
                     <div class="form-group">
                         <label for="titulo">Titulo</label>
                         <input type="text" class="form-control" id="titulo" asp-for="@Model.Titulo" />
@@ -50,77 +51,34 @@
                             <td>Titulo</td>
                             <td>Cliente</td>
                             <td>D_Entrada</td>
-                            <td>D.Entrega</td>
-                            <td>Detalhe</td>
+                            <td>D.Retirada</td>
                         </tr>
                     </thead>
-                    <tbody id="listaPedidos">
-                        <tr>
-                        </tr>
+                    <tbody id="tabela">
+                        <!--aqui a tabela deve ser carregada-->
                     </tbody>
                 </table>
-
             </div>
         </div>
 
     </div>
-    @section Scripts{
-
-        <script type="text/javascript">
-            $('system').ready(function () {
-                carregarTabela();
-            });
-            function carregarTabela() {
-                $.ajax({
-                    url: '/Home/Listar',
-                    type: 'POST',
-                    contentType: 'application/json',
-                    sucess: function (dado) {
-
-                        var iten = "";
-                        $.each(dado, function (key, val) {
-                            iten += "<tr>";
-                            iten += "<td>" + val.cliente.nome + "</td>";
-                            iten += "<td>" + val.nome + "</td>";
-                            iten += "<td>" + val.d_Entrada + "</td>";
-                            iten += "<td>" + val.d_Entrega + "</td>";
-                            iten += "</tr>";
-                        });
-
-                        $('#listaPedidos').empty().append(iten);
-
-                    },
-                    error: function (ex) {
-                        alert("Erro " + ex.status);
-                    }
-
-                });
-
-            }
-
-        </script>
-    }
 
     <!--Painel onde os pedidos mais proximos estaçao sendo apresentados-->
     <div class="col-lg-4">
-        <div class="panel panel-default">
+        <div class="panel panel-default" id="bloco-principal">
             <div class="panel-heading">Pedidos que devem ser entregues hoje</div>
-            <div class="panel-body msg_panel alert alert-danger">
-                Titulo: Troca do sola do sapato
-                <br>
-                D.Entrega : 20/11/2019
-            </div>
-            <div class="panel-body msg_panel alert alert-warning">
-                Titulo: Troca do sola do sapato
-                <br>
-                D.Entrega : 20/11/2019
-            </div>
-            <div class="panel-body msg_panel alert alert-warning">
-                Titulo: Troca do sola do sapato
-                <br>
-                D.Entrega : 20/11/2019
-            </div>
+
+            <!--pedidos devem ser carregados aqui-->
         </div>
     </div>
 </div>
+
+@section Scripts{
+
+    <script src="~/js/Data.js"></script>
+    <script src="~/js/Util.js"></script>
+    <script src="~/js/tabela.js"></script>
+    <script src="~/js/PedidosOrdem.js"></script>
+
+}
 

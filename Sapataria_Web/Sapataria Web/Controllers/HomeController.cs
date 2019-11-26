@@ -39,21 +39,6 @@ namespace Sapataria_Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [HttpPost]
-        public IActionResult Cadastrar([FromForm]Pedido pedido)
-        {
-            if (clienteControlador.localizar(pedido.Cliente) == null)
-            {
-                clienteControlador.Cadastrar(pedido.Cliente);
-            }
-            pedido.D_Entrada = DateTime.Now.Date;
-            pedidoControlador.CadasdrarPedido(pedido);
-            return RedirectToAction("index");
-        }
-        [HttpPost]
-        public JsonResult Listar()
-        {
-            return Json(pedidoControlador.ListarPedidos());
-        }
+
     }
 }
