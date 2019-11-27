@@ -67,4 +67,3 @@ C:\Users\vinic\Desktop\projeto sapataria\Sapataria_Web\Sapataria Web\obj\Debug\n
 C:\Users\vinic\Desktop\projeto sapataria\Sapataria_Web\Sapataria Web\obj\Debug\netcoreapp3.0\Sapataria Web.csproj.CopyComplete
 C:\Users\vinic\Desktop\projeto sapataria\Sapataria_Web\Sapataria Web\obj\Debug\netcoreapp3.0\Sapataria Web.dll
 C:\Users\vinic\Desktop\projeto sapataria\Sapataria_Web\Sapataria Web\obj\Debug\netcoreapp3.0\Sapataria Web.pdb
-C:\Users\vinic\Desktop\projeto sapataria\Sapataria_Web\Sapataria Web\obj\Debug\netcoreapp3.0\Sapataria Web.csprojAssemblyReference.cache

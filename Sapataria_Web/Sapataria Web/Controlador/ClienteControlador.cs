@@ -12,10 +12,20 @@ namespace Sapataria_Web.Controlador
         {
         }
 
-        public Cliente localizar(Cliente cliente)
+        public bool localizar(Cliente cliente)
         {
-            if(dbSet.Where(c => c.Nome.ToUpper() == cliente.Nome.ToUpper()).SingleOrDefault())
-            return ;
+            var validador = true;
+            try
+            {
+                var pesquisa = dbSet.Where(c => c.Nome.ToUpper().Equals(cliente.Nome)).SingleOrDefault();
+            }
+            catch (InvalidOperationException)
+            {
+                validador = false;
+            }
+
+            return validador;
+
         }
 
         public void Cadastrar(Cliente cliente)

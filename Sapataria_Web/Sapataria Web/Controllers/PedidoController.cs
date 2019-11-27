@@ -20,18 +20,15 @@ namespace Sapataria_Web.Controllers
             this.clienteControlador = clienteControlador;
         }
         [HttpPost]
-        public IActionResult Cadastrar([FromForm]Pedido pedido)
+        public void Cadastrar(Pedido pedido)
         {
-            if (clienteControlador.localizar(pedido.Cliente) == null)
+            if (clienteControlador.localizar(pedido.Cliente))
             {
                 clienteControlador.Cadastrar(pedido.Cliente);
             }
             pedido.D_Entrada = DateTime.Now.Date;
             pedidoControlador.CadasdrarPedido(pedido);
-
-            return RedirectToAction("Index");
         }
-
 
         [HttpPost]
         public JsonResult Listar()

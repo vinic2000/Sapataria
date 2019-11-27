@@ -4,7 +4,7 @@ namespace Sapataria_Web.Controlador
 {
     public interface IClienteControlador
     {
-        Cliente localizar(Cliente cliente);
+        bool localizar(Cliente cliente);
         void Cadastrar(Cliente cliente);
     }
 }

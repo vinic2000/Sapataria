@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(buscarPedidos);
+
+function buscarPedidos(){
     console.log("buscando pedidos .....");
 
     var xhr = new XMLHttpRequest();
@@ -22,8 +24,7 @@
     })
 
     xhr.send();
-
-});
+}
 
 function criarBlocoPedido(pedido) {
     var blocoPrincipal = document.querySelector("#bloco-principal");

@@ -17,7 +17,7 @@
             </div>
 
             <div id="divCadastrar" class="container-fluid collapse divCaixa">
-                <form asp-controller="Pedido" asp-action="Cadastrar" method="post">
+                <form id="formCadastrarPedido" asp-controller="pedido" asp-action="cadastrar">
                     <div class="form-group">
                         <label for="titulo">Titulo</label>
                         <input type="text" class="form-control" id="titulo" asp-for="@Model.Titulo" />
@@ -34,7 +34,7 @@
                         <label for="descricao">Descrição</label>
                         <textarea class="form-control" rows="7" id="descricao" asp-for="@Model.Descricao"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success">Cadatrar</button>
+                    <button type="submit" class="btn btn-success" id="btnCadastrar">Cadatrar</button>
                 </form>
             </div>
         </div>
@@ -74,11 +74,14 @@
 </div>
 
 @section Scripts{
+    <script src="~/js/model/Cliente.js"></script>
 
     <script src="~/js/Data.js"></script>
     <script src="~/js/Util.js"></script>
     <script src="~/js/tabela.js"></script>
     <script src="~/js/PedidosOrdem.js"></script>
+    <script src="~/js/formIndex.js"></script>
+
 
 }
 
